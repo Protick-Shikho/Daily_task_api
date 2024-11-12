@@ -23,7 +23,7 @@ func main() {
 
 	
 
-    taskRepo := database.NewTaskRepository(db)
+    taskRepo := database.NewTaskRepository(db) //constructor of database (mysql, mongodb)
 	taskRepo.SetupDatabase()
     taskService := tasks.NewTaskService(taskRepo)
     taskHandler := tasks.NewTaskHandler(taskService)
