@@ -14,7 +14,7 @@ func main() {
 	dsn := "root:123@tcp(localhost:3306)/"
     db, err := database.NewMySQLConnection(dsn)
 
-    
+
     if err != nil {
         log.Fatal(err)
     }
@@ -39,7 +39,7 @@ func main() {
     
 
     http.Handle("/", r)
-    fmt.Println("Server is running on port 8080")
+    fmt.Println("Server is running, on port 8080")
     log.Fatal(http.ListenAndServe(":8080", nil))
 }
 
