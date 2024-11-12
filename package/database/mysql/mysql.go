@@ -14,7 +14,7 @@ type MySQLTaskRepository struct {
 	db *sql.DB
 }
 
-func NewMySQLTaskRepository(db *sql.DB) *MySQLTaskRepository {
+func NewTaskRepository(db *sql.DB) *MySQLTaskRepository {
 	return &MySQLTaskRepository{db: db}
 }
 

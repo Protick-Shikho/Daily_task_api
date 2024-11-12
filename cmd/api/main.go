@@ -5,7 +5,7 @@ import (
     "log"
     "net/http"
     "daily_task/Internal/application/tasks"
-	"daily_task/package/database"
+	"daily_task/package/database/mysql"
     "github.com/gorilla/mux"
 )
 
@@ -23,7 +23,7 @@ func main() {
 
 	
 
-    taskRepo := database.NewMySQLTaskRepository(db)
+    taskRepo := database.NewTaskRepository(db)
 	taskRepo.SetupDatabase()
     taskService := tasks.NewTaskService(taskRepo)
     taskHandler := tasks.NewTaskHandler(taskService)
